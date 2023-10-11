@@ -8,9 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: "Dispicable Me",
       home: Grade(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -27,6 +27,26 @@ class Grade extends StatelessWidget {
         backgroundColor: Colors.amber[600],
         centerTitle: true,
         elevation: 0.0,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            print('Menu button is clicked');
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () {
+              print('Shopping cart button button is clicked');
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print('Search button is clicked');
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
@@ -67,7 +87,7 @@ class Grade extends StatelessWidget {
               height: 30.0,
             ),
             Text(
-              'Peer LEVEL',
+              'MINI LEVEL',
               style: TextStyle(
                 color: Colors.white,
                 letterSpacing: 2.0,
