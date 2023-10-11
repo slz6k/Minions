@@ -1,4 +1,4 @@
-# first_flutter_app
+# Minions
 
 A new Flutter project.
 
