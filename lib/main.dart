@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(const MyApp());
 
@@ -9,14 +10,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "Despicable Me",
-      home: Grade(),
+      home: MyPage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class Grade extends StatelessWidget {
-  const Grade({super.key});
+class MyPage extends StatelessWidget {
+  const MyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -215,7 +216,70 @@ class Grade extends StatelessWidget {
                 backgroundColor: Colors.amber[700],
               ),
             ),
+            MySnackBar(),
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  flutterToast();
+                },
+                child: Text(
+                  'Toast',
+                  style: TextStyle(color: Colors.white),
+                ),
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.amber)),
+              ),
+            )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+void flutterToast() {
+  Fluttertoast.showToast(
+    msg: 'Minions',
+    gravity: ToastGravity.CENTER,
+    backgroundColor: Colors.amberAccent,
+    fontSize: 20.0,
+    textColor: Colors.white,
+    toastLength: Toast.LENGTH_SHORT,
+  );
+}
+
+class MySnackBar extends StatelessWidget {
+  const MySnackBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: TextButton(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.amber)),
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              action: SnackBarAction(
+                label: 'Action',
+                textColor: Colors.grey[850],
+                onPressed: () {
+                  print('SnackBar is clicked');
+                },
+              ),
+              content: const Text(
+                'Hellow',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.amber,
+              duration: Duration(microseconds: 3000),
+            ),
+          );
+        },
+        child: const Text(
+          'Show me',
+          style: TextStyle(color: Colors.white),
         ),
       ),
     );
