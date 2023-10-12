@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: "Dispicable Me",
+      title: "Despicable Me",
       home: Grade(),
       debugShowCheckedModeBanner: false,
     );
@@ -24,15 +24,9 @@ class Grade extends StatelessWidget {
       backgroundColor: Colors.amber[700],
       appBar: AppBar(
         title: const Text('MINIONS'),
-        backgroundColor: Colors.amber[600],
+        backgroundColor: Colors.amber[800],
         centerTitle: true,
         elevation: 0.0,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {
-            print('Menu button is clicked');
-          },
-        ),
         actions: [
           IconButton(
             icon: Icon(Icons.shopping_cart),
@@ -47,6 +41,68 @@ class Grade extends StatelessWidget {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/kevin.png'),
+                backgroundColor: Colors.white,
+              ),
+              otherAccountsPictures: [
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage('assets/agnes.png'),
+                ),
+              ],
+              accountName: Text('Bob'),
+              accountEmail: Text('slz6k@naver.com'),
+              onDetailsPressed: () {
+                print('Arrow is clicked');
+              },
+              decoration: BoxDecoration(
+                  color: Colors.amber[500],
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(40.0),
+                      bottomRight: Radius.circular(40.0))),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.home,
+                color: Colors.grey[850],
+              ),
+              title: Text('Home'),
+              onTap: () {
+                print('Home is clicked');
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.settings,
+                color: Colors.grey[850],
+              ),
+              title: Text('Setting'),
+              onTap: () {
+                print('Setting is clicked');
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.question_answer,
+                color: Colors.grey[850],
+              ),
+              title: Text('Q&A'),
+              onTap: () {
+                print('Q&A is clicked');
+              },
+              trailing: Icon(Icons.add),
+            )
+          ],
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
