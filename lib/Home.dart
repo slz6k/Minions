@@ -229,9 +229,9 @@ class Home extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/b');
+                  Navigator.pushNamed(context, '/dice');
                 },
-                child: Text('Go to the ScreenB'),
+                child: Text('Go to the Dice Game'),
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(Colors.amber[900])),
