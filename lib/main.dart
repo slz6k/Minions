@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:minions/Home.dart';
 import 'package:minions/LogIn.dart';
 import 'package:minions/ScreenA.dart';
-import 'package:minions/ScreenB.dart';
+import 'package:minions/Dice.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LogIn(),
         '/': (context) => Home(),
         '/a': (context) => ScreenA(),
-        '/b': (context) => ScreenB()
+        '/dice': (context) => Dice()
       },
       debugShowCheckedModeBanner: false,
     );
