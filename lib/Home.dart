@@ -207,23 +207,23 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   flutterToast();
                 },
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.amber)),
                 child: Text(
                   'Toast',
                   style: TextStyle(color: Colors.white),
                 ),
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.amber)),
               ),
             ),
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/a');
+                  Navigator.pushNamed(context, '/loading');
                 },
-                child: Text('Go to the ScreenA'),
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(Colors.amber[900])),
+                child: Text('Go to the Weather Info'),
               ),
             ),
             Center(
@@ -231,10 +231,10 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/dice');
                 },
-                child: Text('Go to the Dice Game'),
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(Colors.amber[900])),
+                child: Text('Go to the Dice Game'),
               ),
             ),
           ],
