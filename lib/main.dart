@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minions/Home.dart';
 import 'package:minions/LogIn.dart';
-import 'package:minions/weather.dart';
+import 'package:minions/screens/weather_screen.dart';
 import 'package:minions/Dice.dart';
 import 'package:minions/screens/loading.dart';
 
@@ -16,10 +16,10 @@ class MyApp extends StatelessWidget {
       title: "Despicable Me",
       initialRoute: '/',
       routes: {
-        '/loading': (context) => Loading(),
-        '/login': (context) => LogIn(),
         '/': (context) => Home(),
-        '/weather': (context) => Weather(),
+        '/login': (context) => LogIn(),
+        '/loading': (context) => Loading(),
+        '/weather': (context) => WeatherScreen(),
         '/dice': (context) => Dice()
       },
       debugShowCheckedModeBanner: false,

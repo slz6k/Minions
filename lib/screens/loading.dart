@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:http/http.dart' as http;
+import 'package:minions/data/network.dart';
+import 'package:minions/screens/weather_screen.dart';
+import '../data/my_location.dart';
+const apiKey = 'b6b17d94e32aec4f56a5aa00937f7530';
 
 class Loading extends StatefulWidget {
   const Loading({super.key});
@@ -10,30 +12,29 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
+  late double latitude;
+  late double longitude;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     getLocation();
-    fetchData();
   }
 
   void getLocation() async {
+    MyLocation myLocation = MyLocation();
+    await myLocation.getMyCurrentLocation();
+    latitude = myLocation.latitude;
+    longitude = myLocation.longitude;
 
-    try {
-      LocationPermission permission = await Geolocator.requestPermission();
-      Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-      print(position);
-    } catch(e) {
-      print('There was the problem with the Internet');
-    }
-  }
+    Network network = Network('https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey&units=metric');
+    var weatherData = await network.getJsonData();
+    print(weatherData);
 
-  void fetchData() async {
-    http.Response response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/2'));
-    print(response.statusCode);
-    print(response.body);
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return WeatherScreen(parseWeatherData: weatherData,);
+    }));
   }
 
   @override
