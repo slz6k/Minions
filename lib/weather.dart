@@ -1,10 +1,30 @@
 import 'package:flutter/material.dart';
 
-class ScreenA extends StatelessWidget {
-  const ScreenA({super.key});
+class Weather extends StatefulWidget {
+  const Weather({super.key});
+
+  @override
+  State<Weather> createState() => _WeatherState();
+}
+
+class _WeatherState extends State<Weather> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('initState is called');
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    print('dispose is called');
+  }
 
   @override
   Widget build(BuildContext context) {
+    print('build is called');
     return Scaffold(
       appBar: AppBar(
         title: Text('ScreenA'),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:minions/Home.dart';
 import 'package:minions/LogIn.dart';
-import 'package:minions/ScreenA.dart';
+import 'package:minions/weather.dart';
 import 'package:minions/Dice.dart';
+import 'package:minions/screens/loading.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,11 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Despicable Me",
-      initialRoute: '/login',
+      initialRoute: '/',
       routes: {
+        '/loading': (context) => Loading(),
         '/login': (context) => LogIn(),
         '/': (context) => Home(),
-        '/a': (context) => ScreenA(),
+        '/weather': (context) => Weather(),
         '/dice': (context) => Dice()
       },
       debugShowCheckedModeBanner: false,
