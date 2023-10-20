@@ -30,13 +30,13 @@ class _DiceState extends State<Dice> {
                 child: Row(
                   children: [
                     Expanded(
-                        child: Image.asset('assets/dice/dice$leftDice.png')
+                        child: Image.asset('image/dice$leftDice.png')
                     ),
                     SizedBox(
                       width: 20.0,
                     ),
                     Expanded(
-                        child: Image.asset('assets/dice/dice$rightDice.png')
+                        child: Image.asset('image/dice$rightDice.png')
                     )
                   ],
                 ),

@@ -22,7 +22,7 @@ class MyButton extends StatelessWidget {
             text,
             Opacity(
               opacity: 0.0,
-              child: Image.asset('assets/glogo.png'),
+              child: Image.asset('image/glogo.png'),
             ),
           ],
         ),
