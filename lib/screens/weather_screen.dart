@@ -39,7 +39,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
     cityName = weatherData['name'];
     icon = model.getWeatherIcon(condition)!;
     des = weatherData['weather'][0]['description'];
-    airIcon = model.getWeatherIcon(index)!;
+    airIcon = model.getAirIcon(index)!;
     airState = model.getAirCondition(index)!;
     dust1 = airData['list'][0]['components']['pm10'].toDouble();
     dust2 = airData['list'][0]['components']['pm2_5'].toDouble();
@@ -201,7 +201,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                 ),
                                 airIcon!,
                                 SizedBox(
-                                  height: 10.0,
+                                  height: 5.0,
                                 ),
                                 airState!,
                               ],
