@@ -27,7 +27,7 @@ class LogIn extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           MyButton(
-            image: Image.asset('assets/glogo.png'),
+            image: Image.asset('image/glogo.png'),
             text: Text('Login with Google',
               style: TextStyle(color: Colors.black87, fontSize: 15.0),),
             color: Colors.white,
@@ -38,7 +38,7 @@ class LogIn extends StatelessWidget {
             height: 10.0,
           ),
           MyButton(
-            image: Image.asset('assets/flogo.png'),
+            image: Image.asset('image/flogo.png'),
             text: Text('Login with facebook',
               style: TextStyle(color: Colors.white, fontSize: 15.0),),
             color: Color(0xFF334D92),

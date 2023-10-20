@@ -34,13 +34,13 @@ class Home extends StatelessWidget {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/kevin.png'),
+                backgroundImage: AssetImage('image/kevin.png'),
                 backgroundColor: Colors.white,
               ),
               otherAccountsPictures: [
                 CircleAvatar(
                   backgroundColor: Colors.white,
-                  backgroundImage: AssetImage('assets/agnes.png'),
+                  backgroundImage: AssetImage('image/agnes.png'),
                 ),
               ],
               accountName: Text('Bob'),
@@ -97,7 +97,7 @@ class Home extends StatelessWidget {
           children: [
             Center(
               child: CircleAvatar(
-                backgroundImage: AssetImage('assets/alert_minion.gif'),
+                backgroundImage: AssetImage('image/alert_minion.gif'),
                 radius: 60.0,
               ),
             ),
@@ -196,7 +196,7 @@ class Home extends StatelessWidget {
             ),
             Center(
               child: CircleAvatar(
-                backgroundImage: AssetImage('assets/minions.png'),
+                backgroundImage: AssetImage('image/minions.png'),
                 radius: 40.0,
                 backgroundColor: Colors.amber[700],
               ),
